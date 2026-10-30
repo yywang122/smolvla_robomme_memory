@@ -83,3 +83,42 @@ python scripts/eval_smolvla_full_binfill_binary_gripper.py \
 - Checkpoint and environment paths must be adjusted for each machine.
 - Current evaluation success rate: 0% (under investigation).
 
+
+---
+
+## Model Checkpoint (Hugging Face)
+
+The SmolVLA Full Baseline checkpoint was trained for 30,000 steps on RoboMME.
+
+**Hugging Face Model:** [SmolVLA RoboMME Full Baseline 30K](https://huggingface.co/yywang122/smolvla-robomme-full-baseline-30k)
+
+The checkpoint includes:
+- Model weights (`model.safetensors`)
+- Model configuration (`config.json`)
+- Training configuration (`train_config.json`)
+- Preprocessing and normalization parameters
+- Postprocessing and unnormalization parameters
+
+**Note:** This model repository is private. Access permission is required.
+
+### Download Checkpoint
+
+```bash
+cd ~/smolvla_robomme_memory
+
+hf auth login
+
+hf download yywang122/smolvla-robomme-full-baseline-30k \
+  --local-dir ./checkpoints/smolvla-30k
+```
+
+After downloading, start the inference server using:
+
+```bash
+python scripts/serve_smolvla_full_baseline.py \
+  --checkpoint ./checkpoints/smolvla-30k \
+  --exec-horizon 50 \
+  --port 8011 \
+  --device cuda
+```
+
