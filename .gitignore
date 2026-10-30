@@ -1,0 +1,32 @@
+# Dataset
+data/
+
+# Model weights
+checkpoints/
+outputs/
+external_models/
+reference_models/
+
+# Evaluation logs and videos
+logs/
+videos/
+*.log
+eval_env_runner.txt
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+.env
+.env.*
+
+# Credentials
+*.pem
+*.key
+
+# System
+.DS_Store
