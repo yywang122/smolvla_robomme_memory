@@ -66,8 +66,7 @@ source .venv/bin/activate
 
 cd ~/smolvla_robomme_memory
 
-python scripts/eval_smolvla_full_binfill_binary_gripper.py \
-  2>&1 | tee eval_binary_gripper.log
+python scripts/eval_smolvla_full_binfill_binary_gripper.py 
 ```
 
 ### Evaluation Notes
